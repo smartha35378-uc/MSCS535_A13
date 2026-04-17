@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Registration</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #1f2933;
+  margin: 0;
+  padding: 32px 16px;
+}
+
+main {
+  max-width: 520px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #115e59;
+}
+
+.hint {
+  margin: 0;
+  color: #52606d;
+}
+
+.message {
+  min-height: 1.25rem;
+  font-weight: bold;
+}
+
+.message.error {
+  color: #b42318;
+}
+</style>
+<script src="script.js" defer></script>
+</head>
+<body>
+<main>
+  <h1>Secure Registration Form</h1>
+  <p class="hint">This example uses HTML, JavaScript, PHP, and SQLite with secure coding practices.</p>
+
+  <form id="registrationForm" method="POST" action="process.php" novalidate>
+    <div>
+      <label for="name">Full Name</label>
+      <input type="text" name="name" id="name" maxlength="100" required>
+    </div>
+
+    <div>
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" maxlength="255" required>
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" minlength="8" maxlength="72" required>
+    </div>
+
+    <p id="formMessage" class="message" aria-live="polite"></p>
+    <button type="submit">Register</button>
+  </form>
+</main>
+</body>
+</html>
